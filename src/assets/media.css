@@ -1,0 +1,55 @@
+@media only screen and (max-width: 1920px) {
+
+}
+
+@media only screen and (max-width: 1600px) {
+
+}
+
+@media only screen and (max-width: 1200px) {
+    :root { 
+        --container-padding: 6vw;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #razo-about .about-left {
+        flex-basis: 100%;
+        margin-bottom: 50px;
+        order: 2;
+    }
+    #razo-about .about-right {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        order: 1;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    :root { 
+        --section-padding: 12vh;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    :root { 
+        --container-padding: clamp(1.25em, 3vw, 2.5em);
+        --section-padding: max(2.5em, 12vh);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #razo-hero .razo-about {
+        font-size: var(--font-md);
+    }
+    #razo-hero .razo-used-tools .tools-title,
+    #razo-hero .razo-used-tools .razo-list {
+        font-size: var(--font-md);
+    }
+    
+    #razo-about .blob-1 {
+        position: absolute;
+        bottom: 0;
+        left: 200px;
+    }
+}
