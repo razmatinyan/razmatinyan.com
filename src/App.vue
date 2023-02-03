@@ -1,7 +1,4 @@
 <template>
-    <div class="hover-circle">
-        <div class="hover-circle-in">Visit</div>
-    </div>
     <main id="main-container" data-scroll-container>
         <template v-if="!refreshComponent">
             <Background />
@@ -14,6 +11,12 @@
         <Works />
 
     </main>
+    
+    <div class="hover-circle">
+        <div class="hover-circle-wrap">
+            <div class="hover-circle-in">Visit</div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -118,41 +121,52 @@ export default {
             }
         },
         initStickyButton() {
-            var cursorSpan = document.querySelector(".hover-circle");
 
-            var posXSpan = 0
-            var posYSpan = 0
-            var mouseX = 0
-            var mouseY = 0
-
-            document.addEventListener("mousemove", function (e) {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            gsap.to({}, 0.01, {
-                repeat: -1,
-                onRepeat: function () {
-                    posXSpan += (mouseX - posXSpan) / 6;
-                    posYSpan += (mouseY - posYSpan) / 6;
-                    gsap.set(cursorSpan, {
-                        css: {
-                            left: posXSpan,
-                            top: posYSpan
-                        }
+            if ( window.innerWidth > 540 ) {
+                var cursorSpan = document.querySelector(".hover-circle");
+    
+                var posXSpan = 0
+                var posYSpan = 0
+                var mouseX = 0
+                var mouseY = 0
+    
+                document.addEventListener("mousemove", function (e) {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+    
+                gsap.to({}, 0.01, {
+                    repeat: -1,
+                    onRepeat: function () {
+                        posXSpan += (mouseX - posXSpan) / 6;
+                        posYSpan += (mouseY - posYSpan) / 6;
+                        gsap.set(cursorSpan, {
+                            css: {
+                                left: posXSpan,
+                                top: posYSpan
+                            }
+                        });
+                    }
+                });
+    
+                document.querySelectorAll('#works-section .work-link').forEach(item => {
+                    item.addEventListener('mouseenter', function () {
+                        document.querySelector('.hover-circle').classList.add('active');
                     });
-                }
-            });
-
-            document.querySelectorAll('#works-section .work-link').forEach(item => {
-                item.addEventListener('mouseenter', function () {
-                    document.querySelector('.hover-circle').classList.add('active');
+    
+                    item.addEventListener('mouseleave', function () {
+                        document.querySelector('.hover-circle').classList.remove('active');
+                    });
+    
+                    item.addEventListener('mousedown', function () {
+                        document.querySelector('.hover-circle').classList.add('clicked');
+                    });
+    
+                    item.addEventListener('mouseup', function () {
+                        document.querySelector('.hover-circle').classList.remove('clicked');
+                    });
                 });
-
-                item.addEventListener('mouseleave', function () {
-                    document.querySelector('.hover-circle').classList.remove('active');
-                });
-            });
+            }
         }
     }
 }

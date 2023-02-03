@@ -27,7 +27,7 @@
                     :class="work.name"
                 >
                     <div class="work-in">
-                        <a :href="work.link" class="work-link">
+                        <a :href="work.link" class="work-link" target="_blank">
                             <div class="work-row image-row">
                                 <div class="image-wrapper" :style="`background-color:${work.color}`">
                                     <img :src="getImgUrl(work.id + '.jpg')" :alt="work.name">
