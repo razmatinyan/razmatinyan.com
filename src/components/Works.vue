@@ -45,6 +45,7 @@
             </ul>
         </div>
     </section>
+
 </template>
 
 <script>
@@ -58,7 +59,7 @@ export default {
     name: 'Works',
     setup() {
         const works = ref([
-            { id: 1, name: 'Personal', type: 'Solo', link: 'https://razmatinyan.com/', color: '#adb9ff' },
+            { id: 1, name: 'Personal', type: 'Solo', link: 'https://razmatinyan.com/', color: '#6129cb' },
             { id: 2, name: 'Zeel Portfolio', type: 'Teamwork', link: 'https://portfolio.zeelproject.com/', color: '#383838' },
             { id: 3, name: 'Zeel Blog', type: 'Teamwork', link: 'https://blog.zeelproject.com/', color: '#cfcfcf' },
             { id: 4, name: 'Toon Project', type: 'Teamwork', link: 'https://toonproject.com/', color: '#2a4383' /* #4e608d */ },
@@ -103,12 +104,11 @@ export default {
         tl.from('#works-section .work', {
             y: "80px",
             opacity: 0,
-            stagger: .4,
+            stagger: .25,
             ease: "all .7s cubic-bezier(.7, 0, .3, 1)",
             duration: .4,
             delay: 0
         });
-        
     },
     unmounted() {
         this.$destroySmoothScroll();
@@ -161,6 +161,12 @@ export default {
     #razo-works .svg-path > svg {
         width: 450px;
     }
+    #works-section .works-list > .work {
+        flex-basis: 100%;
+    }
+    #works-section .work .work-row.image-row .image-wrapper {
+        padding-top: 56%;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -168,6 +174,10 @@ export default {
         top: 24%;
         right: unset;
         width: 100%;
+    }
+    #works-section .work .work-row.image-row .image-wrapper[data-v-30d17682],
+    #works-section .work.Personal .work-row.image-row .image-wrapper {
+        padding-top: 1%;
     }
 }
 </style>
