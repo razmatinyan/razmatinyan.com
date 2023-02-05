@@ -29,7 +29,8 @@ html.has-scroll-dragging {
     overflow: hidden; 
 }
 .has-scroll-smooth [data-scroll-container] {
-    min-height: 100vh; 
+    min-height: 100vh;
+    height: 100%;
 }
 .c-scrollbar {
     position: absolute;

@@ -94,7 +94,7 @@ export default {
                 var tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: triggerElement,
-                        toggleActions: 'play',
+                        toggleActions: 'play none none reset',
                         start: "50px 100%",
                         end: "100% 0%",
                     }

@@ -10,6 +10,8 @@
 
         <Works />
 
+        <Contact />
+
     </main>
     
     <div class="hover-circle">
@@ -26,10 +28,11 @@ import Background from '@/components/Background.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import About from '@/components/About.vue'
 import Works from '@/components/Works.vue'
+import Contact from '@/components/Contact.vue'
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-	name: 'App', components: { Background, HeroSection, About, Works },
+	name: 'App', components: { Background, HeroSection, About, Works, Contact },
     data() {
         return {
             refreshInterval: null,
@@ -158,7 +161,7 @@ export default {
                         document.querySelector('.hover-circle').classList.remove('active');
                     });
     
-                    item.addEventListener('mousedown', function () {
+                    item.addEventListener('mousedown', function (e) {
                         document.querySelector('.hover-circle').classList.add('clicked');
                     });
     

@@ -20,11 +20,11 @@
                         </span>
                     </h1>
                     <p class="razo-about razo-hero-animation">
-                        <!-- I create and develop websites with cool animations and interactions. -->
-                        I create and develop websites. Let's start work together!
+                        I create and develop websites with cool animations and interactions. Let's start work together!
+                        <!-- I create and develop websites. -->
                     </p>
                     <div class="razo-contact razo-hero-animation">
-                        <button class="btn bg-blue prlx__item">
+                        <button class="btn bg-blue prlx__item" @click="ToBlock('#razo-contact', 3000)">
                             <div class="btn-fill"></div>
                             <span class="btn-text minwidth">
                                 <span class="btn-text-inner prlx__text">
@@ -69,5 +69,12 @@ export default {
 
         return { beforeEnter, enter }
     },
+    methods: {
+        ToBlock(block, duration) {
+            this.$scroll.scrollTo(block, {
+                duration: duration
+            })
+        }
+    }
 }
 </script>

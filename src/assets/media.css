@@ -29,12 +29,19 @@
     :root { 
         --section-padding: 12vh;
     }
+    #razo-contact .form-title {
+        padding-bottom: var(--section-padding);
+    }
 }
 
 @media only screen and (max-width: 540px) {
     :root { 
         --container-padding: clamp(1.25em, 3vw, 2.5em);
         --section-padding: max(2.5em, 12vh);
+    }
+    #razo-about .razo-about-text,
+    #razo-about li.razo-about-text {
+        font-size: clamp(1.4em, 1vw, 1em);
     }
 }
 
@@ -46,10 +53,13 @@
     #razo-hero .razo-used-tools .razo-list {
         font-size: var(--font-md);
     }
-    
     #razo-about .blob-1 {
         position: absolute;
         bottom: 0;
         left: 200px;
+    }
+    #works-section .works-container {
+        padding-left: calc(var(--container-padding));
+        padding-right: calc(var(--container-padding));
     }
 }
