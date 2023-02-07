@@ -4,6 +4,8 @@
             <Background />
         </template>
 
+        <Navigation />
+
         <HeroSection />
         
         <About />
@@ -24,6 +26,7 @@
 <script>
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navigation from '@/components/Navigation.vue'
 import Background from '@/components/Background.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import About from '@/components/About.vue'
@@ -32,7 +35,7 @@ import Contact from '@/components/Contact.vue'
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-	name: 'App', components: { Background, HeroSection, About, Works, Contact },
+	name: 'App', components: { Navigation, Background, HeroSection, About, Works, Contact },
     data() {
         return {
             refreshInterval: null,
@@ -67,23 +70,25 @@ export default {
     },
     methods: {
         initButtonsInteractions() {
-            var btn = document.querySelector('.btn');
-            btn.addEventListener('mouseenter', function () {
-                gsap.to(this.querySelector(".btn-fill"), {
-                    startAt: { y: "76%" },
-                    y: "0%",
-                    ease: 'Power2.easeInOut'
+            var btn = document.querySelectorAll('.btn');
+            btn.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    gsap.to(this.querySelector(".btn-fill"), {
+                        startAt: { y: "76%" },
+                        y: "0%",
+                        ease: 'Power2.easeInOut'
+                    });
                 });
-            });
-            btn.addEventListener('mouseleave', function () {
-                gsap.to(this.querySelector(".btn-fill"), {
-                    y: "-76%",
-                    ease: 'Power2.easeInOut'
+                item.addEventListener('mouseleave', function () {
+                    gsap.to(this.querySelector(".btn-fill"), {
+                        y: "-76%",
+                        ease: 'Power2.easeInOut'
+                    });
                 });
-            });
+            })
         },
         initParallaxInteractions() {
-            if (window.innerWidth > 540) {
+            if (window.innerWidth > 769) {
 	            var move = 20;
                 var moveText = 10;
 	            var prlxs = document.querySelectorAll('.prlx__item');
@@ -141,8 +146,8 @@ export default {
                 gsap.to({}, 0.01, {
                     repeat: -1,
                     onRepeat: function () {
-                        posXSpan += (mouseX - posXSpan) / 6;
-                        posYSpan += (mouseY - posYSpan) / 6;
+                        posXSpan += (mouseX - posXSpan) / 4;
+                        posYSpan += (mouseY - posYSpan) / 4;
                         gsap.set(cursorSpan, {
                             css: {
                                 left: posXSpan,

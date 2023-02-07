@@ -101,7 +101,7 @@ export default {
     mounted() {
         this.$initSmoothScroll(ScrollTrigger);
         this.$addTextCircle('#razo-contact', 9);
-        this.initButtonsInteractions();
+
         document
             .getElementById("razo-form")
             .addEventListener("submit", this.FormHandler);
@@ -176,22 +176,6 @@ export default {
                     icon: "error",
                     title: "Oops...",
                     text: "There was a problem submitting your form!",
-                });
-            });
-        },
-        initButtonsInteractions() {
-            var btn = document.querySelector('#razo-contact .btn');
-            btn.addEventListener('mouseenter', function () {
-                gsap.to(this.querySelector(".btn-fill"), {
-                    startAt: { y: "76%" },
-                    y: "0%",
-                    ease: 'Power2.easeInOut'
-                });
-            });
-            btn.addEventListener('mouseleave', function () {
-                gsap.to(this.querySelector(".btn-fill"), {
-                    y: "-76%",
-                    ease: 'Power2.easeInOut'
                 });
             });
         },
