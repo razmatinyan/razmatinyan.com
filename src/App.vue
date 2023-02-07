@@ -1,4 +1,6 @@
 <template>
+    <Loader />
+    
     <main id="main-container" data-scroll-container>
         <template v-if="!refreshComponent">
             <Background />
@@ -26,6 +28,7 @@
 <script>
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Loader from '@/components/Loader.vue'
 import Navigation from '@/components/Navigation.vue'
 import Background from '@/components/Background.vue'
 import HeroSection from '@/components/HeroSection.vue'
@@ -35,7 +38,7 @@ import Contact from '@/components/Contact.vue'
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-	name: 'App', components: { Navigation, Background, HeroSection, About, Works, Contact },
+	name: 'App', components: { Loader, Navigation, Background, HeroSection, About, Works, Contact },
     data() {
         return {
             refreshInterval: null,
@@ -43,16 +46,36 @@ export default {
         }
     },
     mounted() {
-        setTimeout(() => {
+        this.$scroll.stop();
+        
+        this.$nextTick(() => {
             this.$initSmoothScroll(ScrollTrigger);
-            this.$scroll.init();
-            
-            const scrollbar = document.querySelectorAll('.c-scrollbar');
+            var tl = gsap.timeline();
 
-            if (scrollbar.length > 1) {
-                scrollbar[0].remove();
-            }
-        }, 1000);
+            tl.to('#loading h2', {
+                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+                ease: 'Power4.easeOut',
+                duration: 2,
+                delay: 1
+            });
+
+            tl.to('#loading', {
+                ease: 'Power4.easeOut',
+                duration: .8,
+                top: "calc(-100%)",
+                ease: "Power4.easeInOut",
+                delay: 0,
+                onComplete: () => {
+                    this.$scroll.start();
+                    const scrollbar = document.querySelectorAll('.c-scrollbar');
+
+                    if (scrollbar.length > 1) {
+                        scrollbar[0].remove();
+                    }
+                }
+            })
+        })
+        
         this.initButtonsInteractions();
         this.initParallaxInteractions();
         this.initStickyButton();

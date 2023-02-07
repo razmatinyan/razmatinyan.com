@@ -123,22 +123,24 @@ export default {
             });
         });
 
-        var tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: document.querySelector('#razo-contact'),
-                toggleActions: 'play none none reverse',
-                start: "top center",
-                end: "center bottom",
-            }
-        });
-        tl.from('#razo-contact .contact-animation', {
-            y: "100px",
-            opacity: 0,
-            stagger: .25,
-            ease: ".7s cubic-bezier(.7, 0, .3, 1)",
-            duration: .4,
-            delay: 0
-        });
+        if ( window.innerWidth < 2560 ) {
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: document.querySelector('#razo-contact'),
+                    toggleActions: 'play none none reverse',
+                    start: "top center",
+                    end: "center bottom",
+                }
+            });
+            tl.from('#razo-contact .contact-animation', {
+                y: "100px",
+                opacity: 0,
+                stagger: .25,
+                ease: ".7s cubic-bezier(.7, 0, .3, 1)",
+                duration: .4,
+                delay: 0
+            });
+        }
 
     },
     methods: {

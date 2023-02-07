@@ -1,3 +1,12 @@
+@media only screen and (min-width: 2560px) {
+    section {
+        min-height: 100vh;
+    }
+    .container {
+        max-width: none;
+    }
+}
+
 @media only screen and (max-width: 1920px) {
 
 }
