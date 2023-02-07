@@ -50,21 +50,30 @@ export default {
         
         this.$nextTick(() => {
             this.$initSmoothScroll(ScrollTrigger);
+
             var tl = gsap.timeline();
 
             tl.to('#loading h2', {
                 clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-                ease: 'Power4.easeOut',
+                ease: 'Power2.easeOut',
                 duration: 2,
                 delay: 1
             });
 
             tl.to('#loading', {
-                ease: 'Power4.easeOut',
+                ease: 'Power4.easeInOut',
                 duration: .8,
                 top: "calc(-100%)",
                 ease: "Power4.easeInOut",
                 delay: 0,
+                onComplete: () => {
+                    document.querySelector('#loading').style.opacity = 0
+                }
+            })
+
+            tl.from('.aaa', {
+                ease: 'Power4.easeInOut',
+                duration: .8,
                 onComplete: () => {
                     this.$scroll.start();
                     const scrollbar = document.querySelectorAll('.c-scrollbar');
@@ -73,7 +82,7 @@ export default {
                         scrollbar[0].remove();
                     }
                 }
-            })
+            }, '-=.7')
         })
         
         this.initButtonsInteractions();

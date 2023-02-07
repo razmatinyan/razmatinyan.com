@@ -19,6 +19,7 @@ export default {
     height: 100vh;
     overflow: hidden;
     z-index: 800;
+    user-select: none;
     pointer-events: none;
     background: #161616;
     will-change: top;
@@ -32,6 +33,7 @@ export default {
     padding: 20px;
     font-size: calc(60 * 100vw / 1920);
     color: #fff;
+    user-select: none;
     pointer-events: none;
     will-change: opacity, clip-path;
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
