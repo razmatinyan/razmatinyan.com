@@ -34,11 +34,9 @@
     background: var(--blue-dark);
     color: #fff;
 }
-
 .dg.ac {
     display: none;
 }
-
 *, *:after, *:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

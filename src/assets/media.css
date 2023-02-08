@@ -22,6 +22,9 @@
 }
 
 @media only screen and (max-width: 1024px) {
+    #razo-hero .razo-contact .btn {
+        height: 3em;
+    }
     #razo-about .about-left {
         flex-basis: 100%;
         margin-bottom: 50px;

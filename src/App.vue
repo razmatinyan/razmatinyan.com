@@ -128,6 +128,10 @@ export default {
                 this.refreshComponent = false;
             }, 1);
         }, 60000);
+
+        console.log("%c © Razmik Matinyan ","background: linear-gradient(to right, #455CE9, #334BD3); padding:5px; font-size: 12px; color: #ffffff")
+        console.log("%c Website is made by Razmik Matinyan ","background: linear-gradient(to right, #455CE9, #334BD3); padding:5px; font-size: 12px; color: #ffffff")
+        console.log("%c Some UI elements and ideas are inspired and taken from https://dennissnellenberg.com/ ","background: linear-gradient(to right, #455CE9, #334BD3); padding:5px; font-size: 12px; color: #ffffff")
     },
     unmounted() {
         this.$destroySmoothScroll();
@@ -153,7 +157,7 @@ export default {
             })
         },
         initParallaxInteractions() {
-            if (window.innerWidth > 769) {
+            if (window.innerWidth > 1024) {
 	            var move = 20;
                 var moveText = 10;
 	            var prlxs = document.querySelectorAll('.prlx__item');

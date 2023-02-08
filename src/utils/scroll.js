@@ -38,8 +38,6 @@ export default {
             ScrollTrigger.defaults({
                 scroller: document.querySelector('[data-scroll-container]'),
             });
-
-            // document.querySelectorAll('.c-scrollbar').forEach(item => item.remove())
             
             const scrollbar = document.querySelectorAll('.c-scrollbar');
 
@@ -54,8 +52,7 @@ export default {
             app.config.globalProperties.$scroll = scroll;
         }
 
-        app.config.globalProperties.$destroySmoothScroll = function(ScrollTrigger) {
-            ScrollTrigger.removeEventListener('refresh', () => this.$scroll.update());
+        app.config.globalProperties.$destroySmoothScroll = function() {
             this.$scroll.destroy();
         }
     }
