@@ -61,7 +61,7 @@ export default {
             tl.to('html', {
                 "--pseudo-width": '100%',
                 duration: 2,
-                delay: .3
+                delay: .8
             })
 
             tl.to('#loading h2 .letter', {
@@ -72,14 +72,14 @@ export default {
                 delay: 0
             }, '-=1.6');
 
-           /* tl.to('#loading h2 .letter', {
+            tl.to('#loading h2 .letter', {
                 ease: 'Power3.easeOut',
                 scale: 0,
                 rotate: '-35',
                 stagger: 0.05,
                 duration: .8,
                 delay: 0
-            }) */
+            });
 
             tl.to('#loading', {
                 ease: 'Power4.easeInOut',
