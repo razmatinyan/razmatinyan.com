@@ -1,6 +1,14 @@
 <template>
     <div id="loading">
-        <h2>WELCOME</h2>
+        <h2>
+            <span class="letter">W</span>
+            <span class="letter">E</span>
+            <span class="letter">L</span>
+            <span class="letter">C</span>
+            <span class="letter">O</span>
+            <span class="letter">M</span>
+            <span class="letter">E</span>
+        </h2>
     </div>
 </template>
 
@@ -33,10 +41,25 @@ export default {
     padding: 20px;
     font-size: calc(60 * 100vw / 1920);
     color: #fff;
+    line-height: 2.9rem;
     user-select: none;
     pointer-events: none;
-    will-change: opacity, clip-path;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+#loading h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: var(--pseudo-width);
+    border-bottom: 2px solid #fff;
+}
+#loading h2 .letter {
+    display: inline-block;
+    transform: translateY(200px);
+    will-change: transform;
 }
 
 @media only screen and (max-width: 769px) {

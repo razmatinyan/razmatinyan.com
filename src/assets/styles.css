@@ -23,7 +23,9 @@
     --font-clamp: calc(clamp(3.25em, 7vw, 7.55em) * .800);
     --font-sm: 14px; 
     --font-md: 15px; 
-    --font-lg: 18px; 
+    --font-lg: 18px;
+
+    --pseudo-width: 0;
 }
 ::-webkit-scrollbar {
     display: none;
@@ -82,6 +84,12 @@ h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5 {
 
 /* Setting other elements */
 ul,ol { padding-left: 0;}
+
+
+#main-container { /* Need to be setted to inital after Mounted hook */
+    position: fixed;
+    width: 100%;
+}
 
 /* === GLOBAL === */
 .reset {

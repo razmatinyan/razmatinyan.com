@@ -46,35 +46,58 @@ export default {
         }
     },
     mounted() {
+        let animElems = document.querySelectorAll('.razo-hero-animation');
+        animElems.forEach(elem => {
+            elem.style.transform = 'translateY(100px)';
+            elem.style.opacity = '0';
+        });
+
         this.$scroll.stop();
         
         this.$nextTick(() => {
-            this.$initSmoothScroll(ScrollTrigger);
-
+            
             var tl = gsap.timeline();
 
-            tl.to('#loading h2', {
-                clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-                ease: 'Power2.easeOut',
+            tl.to('html', {
+                "--pseudo-width": '100%',
                 duration: 2,
-                delay: 1
-            });
+                delay: .3
+            })
+
+            tl.to('#loading h2 .letter', {
+                ease: 'Power3.easeOut',
+                y: 0,
+                stagger: 0.1,
+                duration: 2,
+                delay: 0
+            }, '-=1.6');
+
+            tl.to('#loading h2 .letter', {
+                ease: 'Power3.easeOut',
+                scale: 0,
+                rotate: '-35',
+                stagger: 0.05,
+                duration: .8,
+                delay: 0
+            })
 
             tl.to('#loading', {
                 ease: 'Power4.easeInOut',
-                duration: .8,
+                duration: 1,
                 top: "calc(-100%)",
-                ease: "Power4.easeInOut",
                 delay: 0,
                 onComplete: () => {
                     document.querySelector('#loading').style.opacity = 0
                 }
-            })
+            }, '-=.4');
 
-            tl.from('.aaa', {
-                ease: 'Power4.easeInOut',
+            tl.from('#main-container', {
+                ease: 'Power4.easeOut',
+                top: '80%',
                 duration: .8,
                 onComplete: () => {
+                    document.querySelector('#main-container').style.position = 'initial';
+                    this.$initSmoothScroll(ScrollTrigger);
                     this.$scroll.start();
                     const scrollbar = document.querySelectorAll('.c-scrollbar');
 
@@ -82,8 +105,18 @@ export default {
                         scrollbar[0].remove();
                     }
                 }
-            }, '-=.7')
-        })
+            }, '-=.7');
+
+            tl.to('.razo-hero-animation', {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: "power3.out",
+                duration: .4,
+                delay: 0,
+            });
+
+        });
         
         this.initButtonsInteractions();
         this.initParallaxInteractions();
