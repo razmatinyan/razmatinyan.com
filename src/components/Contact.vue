@@ -26,7 +26,7 @@
                         method="POST"
                     >
                         <div class="form-row contact-animation">
-                            <label>What's you name?</label>
+                            <label>What's your name?</label>
                             <input type="text" class="field" name="name" required  placeholder="Razmik Matinyan *" />
                         </div>
                         <div class="form-row contact-animation">
