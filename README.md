@@ -1,5 +1,7 @@
 # razmatinyan.com
 
+Personal Website, Portfolio, Projects I made myself or with team.
+
 ## Project setup
 ```
 npm install
@@ -14,6 +16,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
