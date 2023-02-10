@@ -99,6 +99,7 @@ export default {
                     document.querySelector('#main-container').style.position = 'initial';
                     this.$initSmoothScroll(ScrollTrigger);
                     this.$scroll.start();
+                    this.$scroll.update();
                     const scrollbar = document.querySelectorAll('.c-scrollbar');
 
                     if (scrollbar.length > 1) {
@@ -198,7 +199,6 @@ export default {
             }
         },
         initStickyButton() {
-
             if ( window.innerWidth > 540 ) {
                 var cursorSpan = document.querySelector(".hover-circle");
     

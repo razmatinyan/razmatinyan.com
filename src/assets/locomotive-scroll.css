@@ -30,7 +30,6 @@ html.has-scroll-dragging {
 }
 .has-scroll-smooth [data-scroll-container] {
     min-height: 100vh;
-    height: 100%;
 }
 .c-scrollbar {
     position: absolute;

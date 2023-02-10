@@ -299,7 +299,7 @@ body {
     background: var(--section-bg);
     overflow: hidden;
     z-index: 4;
-    box-shadow: 0 0 34px 0px rgba(0, 0, 0, 0.82);
+    box-shadow: 0 24px 34px 0px rgb(0 0 0 / 82%);
 }
 #razo-about > .about-container {
     position: relative;

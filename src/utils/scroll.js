@@ -13,7 +13,7 @@ export default {
                 },
                 tablet: {
                     smooth: true,
-                }
+                },
             });
 
             scroll.stop();

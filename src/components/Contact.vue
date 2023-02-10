@@ -8,7 +8,7 @@
         <div
             class="container contact-container"
             data-scroll
-            data-scroll-speed="-4"
+            data-scroll-speed="-6"
         >
             
             <h2 class="form-title">Let's start <br> work together</h2>
@@ -38,7 +38,7 @@
                             <textarea type="text" class="field" name="message" rows="7" required placeholder="Hello, can you help me with... *"></textarea>
                         </div>
                         <div class="form-button">
-                            <div class="button-wrapper" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
+                            <div class="button-wrapper" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-offset="-50%, 0%">
                                 <button id="razo-form-button" class="btn bg-blue prlx__item" data-move="50" data-move-text="30">
                                     <div class="btn-fill"></div>
                                     <span class="btn-text">
