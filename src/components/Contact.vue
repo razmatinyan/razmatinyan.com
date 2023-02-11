@@ -78,6 +78,13 @@
                                 </span>
                             </a>
                         </li>
+                        <li class="link contact-animation">
+                            <a href="https://www.fiverr.com/razmatinyan" class="prlx__item" target="_blank">
+                                <span class="btn-text prlx__text">
+                                    <span class="btn-text-inner">Fiverr</span>
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
