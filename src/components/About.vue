@@ -3,7 +3,7 @@
         <div class="container about-container container-flex about-container">
             <div class="about-left" data-scroll data-scroll-speed="2">
                 <p class="razo-about-text first-text">
-                    I am 20 years old Web Developer from Armenia. I work at Zeel Project for 2 years and i have worked on many projects with our team. I developed websites with different types, such as: Commercial websites, Web Platforms, Landing pages and etc.
+                    I am 20 years old Web Developer from Armenia. I work at Zeel Project for 2 years and i have worked on many projects with our team. I have developed different types of websites, including: Commercial websites, Web Platforms, Landing pages and etc.
                 </p>
                 <p class="razo-about-text second-text">
                     Here are the tools that i use in projects:

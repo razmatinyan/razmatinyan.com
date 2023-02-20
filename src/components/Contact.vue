@@ -11,7 +11,7 @@
             data-scroll-speed="-6"
         >
             
-            <h2 class="form-title">Let's start <br> work together</h2>
+            <h2 class="form-title">Let's start <br> working together</h2>
             <div class="circle prlx__item" data-move="60">
                 <div class="circle-text prlx__text">
                     <span class="to-split">Contact • Contact • Contact • Contact •</span>
